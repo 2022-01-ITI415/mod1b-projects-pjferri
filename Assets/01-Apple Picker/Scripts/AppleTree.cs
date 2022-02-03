@@ -14,7 +14,7 @@ public class AppleTree : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -28,11 +28,21 @@ public class AppleTree : MonoBehaviour
 
         if (pos.x < -leftAndRightEdge)
         {
-            speed = Mathf.Abs(speed); 
+            speed = Mathf.Abs(speed);
         }
         else if (pos.x > leftAndRightEdge)
         {
-            speed = -Mathf.Abs(speed); 
+            speed = -Mathf.Abs(speed);
+        }
+       
+    }
+
+    private void FixedUpdate()
+    {
+        if (Random.value < chanceToChangeDirection)
+        {
+            speed *= -1;
         }
     }
 }
+
