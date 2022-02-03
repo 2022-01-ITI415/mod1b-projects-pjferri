@@ -16,6 +16,8 @@ public class Basket : MonoBehaviour
         scoreGT = scoreGO.GetComponent<Text>(); 
 
         scoreGT.text = "0";
+
+
     }
 
     // Update is called once per frame
@@ -43,10 +45,16 @@ public class Basket : MonoBehaviour
         if (collidedWith.tag == "Apple")
         {
             Destroy(collidedWith);
+            int score = int.Parse(scoreGT.text);
+            score += 100;
+            scoreGT.text = score.ToString();
+            if (score > Highscore.score)
+            {
+                Highscore.score = score;
+
+            }
         }
 
-        int score = int.Parse(scoreGT.text); 
-        score += 100;
-        scoreGT.text = score.ToString();
+       
     }
 }
