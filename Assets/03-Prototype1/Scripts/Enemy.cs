@@ -6,11 +6,11 @@ public class Enemy : MonoBehaviour
 {
     public float speed;
     public float health;
+    public static int score;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
             health--;
             if (health <= 0)
             {
+                score++;
                 Destroy(this.gameObject);
             }
         }

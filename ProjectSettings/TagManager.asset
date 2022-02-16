@@ -7,6 +7,7 @@ TagManager:
   - Apple
   - Projectile
   - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
